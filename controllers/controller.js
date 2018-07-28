@@ -10,24 +10,32 @@ module.exports = {
         res.render('index.ejs', {
             // user: req.user,
         });
-
-        // var newDoctor = new Doctor();
-        // newDoctor.doctorID = "0001";
-        // newDoctor.email = "123";
-        // newDoctor.name = "Jack";
-        // newDoctor.phone = "000";
-        // newDoctor.password = "123";
-        // newDoctor.patients = "[]";
-        // newDoctor.save(function(err, save) {
-        //     if (err)
-        //         return done(err);
-        //     return done(null, newDoctor);
-        // });
     },
 
+    // Sign up
+    signupPage: function (req, res) {
+        res.render('signup.ejs', {
+            // message: req.flash('signupMessage')
+        });
+    },
+
+    // Log in
     loginPage: function (req, res) {
         res.render('login.ejs', {
-            // user: req.user,
+            // message: req.flash('loginMessage'),
         });
+    },
+
+    // Log out
+    logout: function (req, res) {
+        req.logout();
+        res.redirect('/');
+    },
+
+    isLoggedIn: function (req, res, next) {
+        if (req.isAuthenticated())
+            return next();
+
+        res.redirect('/login');
     }
 }
