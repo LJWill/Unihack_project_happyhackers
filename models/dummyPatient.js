@@ -1,5 +1,5 @@
 
-const dummyPatient = [
+const dummyPatients = [
     {
         "patientID": "p1",
         "name": "Oliver",
@@ -169,5 +169,6 @@ const dummyPatient = [
         }
     }
 
-
 ]
+
+module.exports = dummyPatients;

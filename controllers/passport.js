@@ -1,5 +1,8 @@
 // load all the things we need
 var LocalStrategy = require('passport-local').Strategy;
+var dummy_patients = require('../models/dummyPatient.js');
+
+console.log(dummy_patients[0].patientID);
 
 // load up the user model
 var User = require('../models/user_model.js');

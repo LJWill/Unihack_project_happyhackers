@@ -18,7 +18,46 @@ var userSchema = mongoose.Schema({
     },
     patients: [
         {
-            patientID: String
+            patientID: String,
+            name: String,
+            age: Number,
+            sex: String,
+            isPlaying: Boolean,
+            description: String,
+            analysis: {
+                average_scores: [
+                    {
+                        score: Number,
+                        date: Date
+                    }
+                ], 
+                average_steps: [
+                    {
+                        step: Number,
+                        date: Date
+                    }
+                ],
+                history_scores: [
+                    {
+                        score: Number,
+                        date: Date
+                    }
+                ],
+                history_dates: [
+                    {
+                        date: Date
+                    }
+                ],
+                history_steps: [
+                    {
+                        step: Number,
+                        date: Date
+                    }
+                ],
+                goal: Number, 
+                state: String,
+            }
+
         }
     ]
 });
