@@ -68,3 +68,48 @@ p {
     text-align: center;
     line-height: 50px;
 }
+
+.left-btn {
+    float: left;
+}
+.right-btn {
+    float: right;
+}
+.grid-container-patient {
+    display: grid;
+    grid-template-rows:30px 30px 30px 30px 30px;
+    grid-template-columns: 30% 30% 40%;
+    margin-top: 30px;
+    margin-bottom: 15px;
+}
+.item-photo {
+    grid-area: 1 / 1 / span 4 / span 1;
+}
+.item-name {
+    grid-area: 1 / 2 / span 1 / span 1;
+    text-align: left;
+}
+.item-id {
+    grid-area: 2 / 2 / span 1 / span 1;
+    text-align: left;
+}
+.item-age {
+    grid-area: 3 / 2 / span 1 / span 1;
+    text-align: left;
+}
+.item-date {
+    grid-area: 2 / 3 / span 1 / span 1;
+    text-align: left;
+}
+.item-mobile {
+    grid-area: 3 / 3 / span 1 / span 1;
+    text-align: left;
+}
+.item-address {
+    grid-area: 4 / 2 / span 1 / span 2;
+    text-align: left;
+}
+.item-symptoms {
+    grid-area: 5 / 2 / span 1 / span 2;
+    text-align: left;
+}
