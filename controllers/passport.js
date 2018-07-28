@@ -2,7 +2,7 @@
 var LocalStrategy = require('passport-local').Strategy;
 
 // load up the user model
-var User = require('../models/doctor_model.js');
+var User = require('../models/user_model.js');
 
 module.exports = function(passport) {
 
@@ -86,10 +86,13 @@ module.exports = function(passport) {
 
                             // create the user
                             var newUser      = new User();
+                            var dummyPatient = [{"patientID": "p1"}, {"patientID": "p2"}];
+
                             newUser.email    = email;
                             newUser.name     = req.body.name;
                             newUser.phone    = req.body.phone;
                             newUser.password = newUser.generateHash(password);
+                            newUser.patients = dummyPatient;
 
                             newUser.save(function(err, save) {
                                 if (err)
