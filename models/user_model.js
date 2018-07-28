@@ -54,6 +54,12 @@ var userSchema = mongoose.Schema({
                         date: Date
                     }
                 ],
+                coordinates: [
+                    {
+                        posX: Number, 
+                        posY: Number
+                    }
+                ],
                 goal: Number, 
                 state: String,
             }

@@ -12,44 +12,44 @@ const dummyPatients = [
             "average_scores": [
                 {
                     "score": 65,
-                    "date": 15793791
+                    "date": new Date()
                 }
             ], 
             "average_steps": [
                 {
                     "step": 30,
-                    "date": 15793791
+                    "date": new Date()
                 }
             ],
             "history_scores": [
                 {
                     "score": 60,
-                    "date": 15793791
+                    "date": new Date()
                 }
             ],
             "history_dates": [
                 {
-                    "date": 15793791
+                    "date": new Date()
                 },
                 {
-                    "date": 15793793
+                    "date": new Date()
                 },
                 {
-                    "date": 15793795
+                    "date": new Date()
                 }
             ],
             "history_steps": [
                 {
                     "step": 90,
-                    "date": 15793795
+                    "date": new Date()
                 },
                 {
                     "step": 105,
-                    "date": 15793860
+                    "date": new Date()
                 },
                 {
                     "step": 120,
-                    "date": 15793888
+                    "date": new Date()
                 }
             ],
             "goal": 80, 
@@ -68,44 +68,44 @@ const dummyPatients = [
             "average_scores": [
                 {
                     "score": 65,
-                    "date": 15793791
+                    "date": new Date()
                 }
             ], 
             "average_steps": [
                 {
                     "step": 30,
-                    "date": 15793791
+                    "date": new Date()
                 }
             ],
             "history_scores": [
                 {
                     "score": 60,
-                    "date": 15793791
+                    "date": new Date()
                 }
             ],
             "history_dates": [
                 {
-                    "date": 15793791
+                    "date": new Date()
                 },
                 {
-                    "date": 15793793
+                    "date": new Date()
                 },
                 {
-                    "date": 15793795
+                    "date": new Date()
                 }
             ],
             "history_steps": [
                 {
                     "step": 90,
-                    "date": 15793795
+                    "date": new Date()
                 },
                 {
                     "step": 105,
-                    "date": 15793860
+                    "date": new Date()
                 },
                 {
                     "step": 120,
-                    "date": 15793888
+                    "date": new Date()
                 }
             ],
             "goal": 80, 
@@ -124,44 +124,44 @@ const dummyPatients = [
             "average_scores": [
                 {
                     "score": 65,
-                    "date": 15793791
+                    "date": new Date()
                 }
             ], 
             "average_steps": [
                 {
                     "step": 30,
-                    "date": 15793791
+                    "date": new Date()
                 }
             ],
             "history_scores": [
                 {
                     "score": 60,
-                    "date": 15793791
+                    "date": new Date()
                 }
             ],
             "history_dates": [
                 {
-                    "date": 15793791
+                    "date": new Date()
                 },
                 {
-                    "date": 15793793
+                    "date": new Date()
                 },
                 {
-                    "date": 15793795
+                    "date": new Date()
                 }
             ],
             "history_steps": [
                 {
                     "step": 90,
-                    "date": 15793795
+                    "date": new Date()
                 },
                 {
                     "step": 105,
-                    "date": 15793860
+                    "date": new Date()
                 },
                 {
                     "step": 120,
-                    "date": 15793888
+                    "date": new Date()
                 }
             ],
             "goal": 80, 

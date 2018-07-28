@@ -8,7 +8,6 @@ router.get("/", function (req, res) {
 router.get('/index', controller.indexPage);
 
 
-
 //Sign up
 router.get('/signup', controller.signupPage);
 router.post('/signup', passport.authenticate('local-signup', {
@@ -28,6 +27,12 @@ router.post('/login', passport.authenticate('local-login', {
 
 // Log out
 router.get('/logout', controller.isLoggedIn, controller.logout);
+
+// Handle start
+router.get('/start', controller.isStart);
+
+// Handle stop
+router.get('/stop', controller.isStop);
 
 module.exports = router;
 

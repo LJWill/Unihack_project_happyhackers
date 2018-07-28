@@ -9,8 +9,6 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
 
-    
-
   <script>
       function showDetail(obj) {
         var name = obj;
@@ -64,7 +62,7 @@
     <div class="col-sm-3 well">
       <div class="well">
           <% if (user != undefined) { %>
-            <img src="/images/WechatIMG387.png" class="img-circle" height="120px" width="120px" alt="Avatar">
+            <img src="/images/WechatIMG387.png" data-toggle="modal" data-target="#logout-modal" class="img-circle" height="120px" width="120px" alt="Avatar">
           <% } else { %><% } %>
         <hr>
         <% if (user != undefined) { %>

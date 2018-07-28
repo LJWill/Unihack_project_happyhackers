@@ -2,6 +2,8 @@
 
 var Patient = require("../models/patient_model");
 var Game = require("../models/game_model");
+var sendStart = require("../app.js").sendStart;
+// var sendStop = require("../app.js").sendStop;
 
 module.exports = {
     // Index Page
@@ -37,5 +39,17 @@ module.exports = {
             return next();
 
         res.redirect('/');
+    },
+
+    // Send start
+    isStart: function(req, res, next) {
+        require("../app.js").start();
+    },
+
+    // Send stop
+    isStop: function(req, res, next) {
+        require("../app.js").stop();
     }
+
+
 }
