@@ -86,7 +86,18 @@ module.exports = function(passport) {
 
                             // create the user
                             var newUser      = new User();
-                            var dummyPatient = [{"patientID": "p1"}, {"patientID": "p2"}];
+                            var dummyPatient = [
+                                {"patientID": "p1"}, 
+                                {"patientID": "p2"},
+                                {"patientID": "p3"}, 
+                                {"patientID": "p4"}, 
+                                {"patientID": "p5"}, 
+                                {"patientID": "p6"}, 
+                                {"patientID": "p7"}, 
+                                {"patientID": "p8"}, 
+                                {"patientID": "p9"}, 
+                                {"patientID": "p10"}, 
+                            ];
 
                             newUser.email    = email;
                             newUser.name     = req.body.name;
