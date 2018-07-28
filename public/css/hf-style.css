@@ -19,4 +19,32 @@ nav {
     margin-bottom: 0!important;
 }
 
+.card1 { 
+    align-items: center; 
+    background-color:#337ab7;
+    margin-bottom: 15px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+}
+.card2 {
+    align-items: center; 
+    background-color:#337ab7;
+    margin-bottom: 40px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+}
+.card3 { 
+    align-items: center; 
+    background-color:#337ab7;
+    margin-top: 30px;
+    margin-bottom: 15px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+}
 
+p {
+    margin-bottom: 0!important;
+}
