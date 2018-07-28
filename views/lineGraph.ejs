@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,height=device-height">
+    <title>实时更新数据的折线图</title>
+    <style>::-webkit-scrollbar{display:none;}html,body{overflow:hidden;height:100%;margin:0;}</style>
+</head>
+<body>
+<div id="mountNode"></div>
+<script>/*Fixing iframe window.innerHeight 0 issue in Safari*/document.body.clientHeight;</script>
+<script src="https://gw.alipayobjects.com/os/antv/pkg/_antv.g2-3.2.4/dist/g2.min.js"></script>
+<script>
+var data = [];
+var chart = new G2.Chart({
+  container: 'mountNode',
+  forceFit: true,
+  height: window.innerHeight
+});
+chart.source(data, {
+  time: {
+    alias: '时间',
+    type: 'time',
+    mask: 'MM:ss',
+    tickCount: 10,
+    nice: false
+  },
+  temperature: {
+    alias: '平均温度(°C)',
+    min: 10,
+    max: 35
+  },
+  type: {
+    type: 'cat'
+  }
+});
+chart.line().position('time*temperature').color('type', ['#ff7f0e', '#2ca02c']).shape('smooth').size(2);
+chart.render();
+setInterval(function() {
+  var now = new Date();
+  var time = now.getTime();
+  var temperature1 = ~~(Math.random() * 5) + 22;
+  var temperature2 = ~~(Math.random() * 7) + 17;
+  if (data.length >= 200) {
+    data.shift();
+    data.shift();
+  }
+  data.push({
+    time: time,
+    temperature: temperature1,
+    type: '记录1'
+  });
+  data.push({
+    time: time,
+    temperature: temperature2,
+    type: '记录2'
+  });
+  chart.changeData(data);
+}, 1000);
+</script>
+</body>
+</html>
