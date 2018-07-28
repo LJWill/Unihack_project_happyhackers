@@ -87,7 +87,8 @@ wss.on('connection', function connection(ws) {
     ws.on('message', function incoming(message) {
         // console.log('received: ' + message);
         jsonObj = JSON.parse(message);
-        if (Array.isArray) {
+        console.log(jsonObj);
+        if (Array.isArray(jsonObj)) {
             // Check each item, real time object
             for (item in jsonObj) {
                 if ("posX" in jsonObj[item]) { // posX posY together here
@@ -115,7 +116,7 @@ wss.on('connection', function connection(ws) {
 var events = require('events');
 var eventEmitter = new events.EventEmitter();
 
-// listener #1
+// listener #1 for start game
 var listner1 = function listner1() {
     wss.clients.forEach((client)=> {
         client.send("start");
@@ -123,7 +124,7 @@ var listner1 = function listner1() {
     });
  }
 
- // listener #2
+ // listener #2 for stop game
  var listner2 = function listner2() {
     wss.clients.forEach((client)=> {
         client.send("stop");
