@@ -11,25 +11,25 @@
 
     
 
-<script>
-        // $(function () {
-        //     var patient_clicked = false;
-        //     $('#patients-link').click( function(e) {
-        //         e.preventDefault(); 
-        //         /*your_code_here;*/ 
-        //         if(patient_clicked == false){
-        //             $('#patients-list').fadeIn();
-        //             patient_clicked = true;
-        //         }else{
-        //             $('#patients-list').fadeOut();
-        //             patient_clicked = false;
-        //         }
-                
-        //         return false; 
-        //     });
-        // })
-
-    </script>
+  <script>
+      function showDetail(obj) {
+        var name = obj;
+        var card = document.getElementsByClassName("patient-card");
+        for(var i=0; i<card.length; i++){
+          card[i].style.display='none';
+        }
+        
+        var target = document.getElementById(name);
+        target.style.display='block';
+      }
+      function back() {
+        var card = document.getElementsByClassName('patient-card');
+        for(var i=0; i<card.length;i++){
+          card[i].style.display='none';
+        }
+        card[0].style.display='block';
+      }
+  </script>
     <script>
       window.onload=function() {
         
@@ -51,6 +51,7 @@
         oTab[0].className='active';
         oContent[0].style.display='block';
       }
+      
     </script>
 </head>
 
@@ -164,24 +165,24 @@
                   </div>
               </div>
             </div>
-            <>
           </div>
         </div>
       </div>
       
 
     <div id="patients-list" class="tab-content patients-list" style="display:none">
+      <div class="patient-card">
       <div class="row">
         <div class="col-sm-3">
           <div class="well">
            <p>Oliver Jake</p>
-           <a href="#">Details</a>
+           <a href="javascript:void(0)" onclick="showDetail(this.name)" name="001">Details</a>
           </div>
         </div>
         <div class="col-sm-9">
           <div class="well">
-            <div class="row"> Description: </div>
-            <div class="row"> </div>
+            <div class="row" style="text-align: left; margin-left: 30px;"> Description: None</div>
+            <div class="row" style="text-align: left; margin-left: 30px;"> Last: 1 h ago</div>
           </div>
         </div>
       </div>
@@ -189,12 +190,13 @@
         <div class="col-sm-3">
           <div class="well">
            <p>Jack Conner</p>
-           <a href="#">Details</a>
+           <a href="javascript:void(0)" onclick="showDetail(this.name)" name="002">Details</a>
           </div>
         </div>
         <div class="col-sm-9">
           <div class="well">
-            <p>Just Forgot that I had to mention something about someone to someone about how I forgot something, but now I forgot it. Ahh, forget it! Or wait. I remember.... no I don't.</p>
+              <div class="row" style="text-align: left; margin-left: 30px;"> Description: Medicine causes side effect, last 2 days</div>
+              <div class="row" style="text-align: left; margin-left: 30px;"> Last: 5 h ago</div>
           </div>
         </div>
       </div>
@@ -202,12 +204,13 @@
         <div class="col-sm-3">
           <div class="well">
            <p>Jane</p>
-           <a href="#">Details</a>
+           <a href="javascript:void(0)" onclick="showDetail(this.name)" name="003">Details</a>
           </div>
         </div>
         <div class="col-sm-9">
           <div class="well">
-            <p>Just Forgot that I had to mention something about someone to someone about how I forgot something, but now I forgot it. Ahh, forget it! Or wait. I remember.... no I don't.</p>
+              <div class="row" style="text-align: left; margin-left: 30px;"> Description: Condition improved; reduce dose</div>
+              <div class="row" style="text-align: left; margin-left: 30px;"> Last: 1 d ago</div>  
           </div>
         </div>
       </div>
@@ -215,16 +218,18 @@
         <div class="col-sm-3">
           <div class="well">
            <p>Anja</p>
-           <a href="#">Details</a>
+           <a href="javascript:void(0)" onclick="showDetail(this.name)" name="004">Details</a>
           </div>
         </div>
         <div class="col-sm-9">
           <div class="well">
-            <p>Just Forgot that I had to mention something about someone to someone about how I forgot something, but now I forgot it. Ahh, forget it! Or wait. I remember.... no I don't.</p>
+              <div class="row" style="text-align: left; margin-left: 30px;"> Description: Be infected by others; need to be quarantined</div>
+              <div class="row" style="text-align: left; margin-left: 30px;"> Last: 1 d ago</div>    
           </div>
         </div>
       </div>  
-         
+    </div>
+    <%- include patient.ejs %>   
     </div>
     <div class="panel panel-default text-left tab-content" style="display:none"></div>
     <div class="panel panel-default text-left tab-content" style="display:none"></div>
@@ -250,7 +255,6 @@
 </div>
 
 <%- include footer.ejs %>
-
 
 </body>
 </html>
