@@ -2,7 +2,7 @@
 var LocalStrategy = require('passport-local').Strategy;
 var dummy_patients = require('../models/dummyPatient.js');
 
-console.log(dummy_patients[0].patientID);
+// console.log(dummy_patients[0].patientID);
 
 // load up the user model
 var User = require('../models/user_model.js');
@@ -89,18 +89,19 @@ module.exports = function(passport) {
 
                             // create the user
                             var newUser      = new User();
-                            var dummyPatient = [
-                                {"patientID": "p1"}, 
-                                {"patientID": "p2"},
-                                {"patientID": "p3"}, 
-                                {"patientID": "p4"}, 
-                                {"patientID": "p5"}, 
-                                {"patientID": "p6"}, 
-                                {"patientID": "p7"}, 
-                                {"patientID": "p8"}, 
-                                {"patientID": "p9"}, 
-                                {"patientID": "p10"}, 
-                            ];
+                            // var dummyPatient = [
+                            //     {"patientID": "p1"}, 
+                            //     {"patientID": "p2"},
+                            //     {"patientID": "p3"}, 
+                            //     {"patientID": "p4"}, 
+                            //     {"patientID": "p5"}, 
+                            //     {"patientID": "p6"}, 
+                            //     {"patientID": "p7"}, 
+                            //     {"patientID": "p8"}, 
+                            //     {"patientID": "p9"}, 
+                            //     {"patientID": "p10"}, 
+                            // ];
+                            var dummyPatient = dummy_patients;
 
                             newUser.email    = email;
                             newUser.name     = req.body.name;
