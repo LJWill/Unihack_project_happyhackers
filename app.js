@@ -2,6 +2,8 @@
 var express  = require('express');
 var app = express();
 
+require('./models/mongoose')
+
 // View Engine
 app.set('view engine', 'ejs');
 

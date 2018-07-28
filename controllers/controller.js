@@ -1,6 +1,8 @@
 
 
-
+var Doctor = require("../models/doctor_model");
+var Patient = require("../models/patient_model");
+var Game = require("../models/game_model");
 
 module.exports = {
     // Index Page
@@ -8,11 +10,18 @@ module.exports = {
         res.render('index.ejs', {
             // user: req.user,
         });
-    },
-    // Login Page
-    loginPage: function (req, res) {
-        res.render('login.ejs', {
-            // message: req.flash('loginMessage'),
+
+        var newDoctor = new Doctor();
+        newDoctor.doctorID = "0001";
+        newDoctor.email = "123";
+        newDoctor.name = "Jack";
+        newDoctor.phone = "000";
+        newDoctor.password = "123";
+        newDoctor.patients = "[]";
+        newDoctor.save(function(err, save) {
+            if (err)
+                return done(err);
+            return done(null, newDoctor);
         });
-    },
+    }
 }
