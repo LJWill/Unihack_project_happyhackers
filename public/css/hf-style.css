@@ -1,0 +1,22 @@
+
+footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    background: black;
+    color: white;
+    padding: 15px;
+}
+
+nav {
+    border-radius: 0px!important;
+}
+
+.footer-content {
+    align-items: center;
+    margin-bottom: 0!important;
+}
+
+
