@@ -91,8 +91,10 @@ wss.on('connection', function connection(ws) {
         if (Array.isArray(jsonObj)) {
             // Check each item, real time object
             for (item in jsonObj) {
+                // console.debug(jsonObj[item]["posX"]);
                 if ("posX" in jsonObj[item]) { // posX posY together here
                     // Render posX value here
+                    module.exports.posX = jsonObj[item]["posX"];
                 }
                 if ("stepHeight" in jsonObj[item]) {
                     // Render stepHeight value here

@@ -28,6 +28,9 @@ router.post('/login', passport.authenticate('local-login', {
 // Log out
 router.get('/logout', controller.isLoggedIn, controller.logout);
 
+// Graph
+router.get('/graph', controller.graph);
+
 // Handle start
 router.get('/start', controller.isStart);
 

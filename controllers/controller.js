@@ -41,6 +41,13 @@ module.exports = {
         res.redirect('/');
     },
 
+    // Graph Page
+    graph: function(req, res, next) {
+        res.render('lineGraph.ejs', {
+            // data: req.
+        });
+    },
+
     // Send start
     isStart: function(req, res, next) {
         require("../app.js").start();
@@ -50,6 +57,8 @@ module.exports = {
     isStop: function(req, res, next) {
         require("../app.js").stop();
     }
+
+
 
 
 }
